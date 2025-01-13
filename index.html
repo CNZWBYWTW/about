@@ -5,20 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CNZW發布頁 回家的路</title>
-    <link href="css/style-2.css" rel="stylesheet" />
-    <link href="favicon.ico" rel="Shortcut Icon" type="image/ico" />
+    <link href="css/style-2.css" rel="stylesheet">
+    <link href="favicon.ico" rel="Shortcut Icon">
     <link href="https://cnzw.us.kg/css/all.css" rel="stylesheet">
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 
 <body>
-    <main class="snap-container">
+    <captcha class="captcha">
+        <div class="captcha-title">Please complete the captcha</div>
+        <div class="h-captcha" data-sitekey="3b82970a-5584-46e4-912c-c69cd56cb2d4" data-callback="captcha_callback">
+        </div>
+        <script>
+            function captcha_callback() {
+                document.querySelector('.snap-container').classList.remove('hide');
+                document.querySelector('captcha').className += ' hidden';
+                setTimeout(() => {
+                    document.querySelector('captcha').remove();
+                }, 1000);
+            }
+        </script>
+        <style>
+            .captcha {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                text-align: center;
+                z-index: 114514;
+                background-color: #696969;
+                opacity: 1;
+                transition: opacity 1000ms;
+            }
+
+            .captcha-title {
+                font-size: 2em;
+                color: white;
+                margin-top: 30vh;
+            }
+
+            .h-captcha {
+                margin-top: 20px;
+            }
+
+            .hidden {
+                opacity: 0;
+            }
+        </style>
+    </captcha>
+    <main class="snap-container hide">
         <div class="page img-right">
             <img class="img-rwd " src="img/01-r.png" alt="">
             <img class="img-rwd " src="img/01-l.png" alt="">
         </div>
         <div class="page main-content">
             <div class="wrap">
-                <h1><cnzw>CNZW</cnzw>發布頁</h1>
+                <h1>
+                    <cnzw>CNZW</cnzw>發布頁
+                </h1>
                 <h2>回家的路，怕走失記得收藏哦</h2>
                 <div>
                     <p>主站網域</p>
