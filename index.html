@@ -17,9 +17,20 @@
         <div class="h-captcha" data-sitekey="3b82970a-5584-46e4-912c-c69cd56cb2d4" data-callback="captcha_callback">
         </div>
         <script>
+            captcha_max_time = 1000 * 60 * 60 * 3;
+            window.onload = () => {
+                if (localStorage.getItem('captcha') === 'true' && Date.now() - localStorage.getItem('captcha_time') < captcha_max_time) {
+                    document.querySelector('captcha').remove();
+                    document.querySelector('main').classList.remove('hide');
+                }else{
+                    localStorage.setItem('captcha', 'false');
+                }
+            };
             function captcha_callback() {
-                document.querySelector('.snap-container').classList.remove('hide');
+                document.querySelector('main').classList.remove('hide');
                 document.querySelector('captcha').className += ' hidden';
+                localStorage.setItem('captcha', 'true');
+                localStorage.setItem('captcha_time', Date.now());
                 setTimeout(() => {
                     document.querySelector('captcha').remove();
                 }, 1000);
