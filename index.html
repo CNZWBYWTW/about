@@ -21,13 +21,11 @@
             window.onload = () => {
                 if (localStorage.getItem('captcha') === 'true' && Date.now() - localStorage.getItem('captcha_time') < captcha_max_time) {
                     document.querySelector('captcha').remove();
-                    document.querySelector('main').classList.remove('hide');
-                }else{
+                } else {
                     localStorage.setItem('captcha', 'false');
                 }
             };
             function captcha_callback() {
-                document.querySelector('main').classList.remove('hide');
                 document.querySelector('captcha').className += ' hidden';
                 localStorage.setItem('captcha', 'true');
                 localStorage.setItem('captcha_time', Date.now());
@@ -67,7 +65,7 @@
             }
         </style>
     </captcha>
-    <main class="snap-container hide">
+    <main class="snap-container">
         <div class="page img-right">
             <img class="img-rwd " src="img/01-r.png" alt="">
             <img class="img-rwd " src="img/01-l.png" alt="">
