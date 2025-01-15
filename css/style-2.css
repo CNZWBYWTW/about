@@ -323,6 +323,26 @@ small {
   }
 }
 
+@font-face {
+  font-family: 'MC';
+  src: url('/ttf/MC.ttf');
+}
+
 cnzw {
   font-family: "MC";
+}
+
+body {
+  cursor: default;
+}
+
+a {
+  color: #272727;
+  text-decoration: none;
+  cursor: default;
+}
+
+::selection {
+  background: rgb(0, 255, 0);
+  color: black;
 }
