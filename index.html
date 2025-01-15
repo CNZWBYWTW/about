@@ -43,6 +43,7 @@
                                 document.querySelector('captcha').remove();
                             }, 1000);
                         }else{
+                            localStorage.setItem('captcha', 'false');
                             alert('The captcha did not pass, please try again!');
                             hcaptcha.reset();
                         }
