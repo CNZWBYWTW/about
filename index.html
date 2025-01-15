@@ -23,13 +23,30 @@
             } else {
                 localStorage.setItem('captcha', 'false');
             }
-            function captcha_callback() {
-                document.querySelector('captcha').className += ' hidden';
-                localStorage.setItem('captcha', 'true');
-                localStorage.setItem('captcha_time', Date.now());
-                setTimeout(() => {
-                    document.querySelector('captcha').remove();
-                }, 1000);
+            function captcha_callback(token) {
+                fetch(`https://check-hcaptcha-token.cnzw.us.kg/`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        "token": token
+                    })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            document.querySelector('captcha').className += ' hidden';
+                            localStorage.setItem('captcha', 'true');
+                            localStorage.setItem('captcha_time', Date.now());
+                            setTimeout(() => {
+                                document.querySelector('captcha').remove();
+                            }, 1000);
+                        }else{
+                            alert('The captcha did not pass, please try again!');
+                            hcaptcha.reset();
+                        }
+                    })
             }
         </script>
         <style>
