@@ -1,10 +1,23 @@
+<!--
+The HTML was created by CNZW on 2025/03/03
+
+GitHub@CNZWBYWTW
+
+My website:
+https://cnzw.us.kg/
+https://www.此生最爱御坂美琴.cloudns.org/
+
+License:
+CC BY-NC-SA 4.0
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+-->
 <!DOCTYPE html>
 <html lang="zh-cn">
 
 <head>
     <meta charset="UTF-8">
     <title>CNZW</title>
-    <link rel="icon Shortcut" href="/img/CNZW/favicon.png">
+    <link rel="icon" href="/img/CNZW/favicon.png">
     <link rel="stylesheet" href="/css/all.css">
     <link rel="stylesheet" href="/css/background.css">
     <script src="/js/all.js"></script>
@@ -13,6 +26,17 @@
             background-image: url("/img/CNZW/background.png");
         }
     </style>
+    <!--BGM-->
+    <audio id="bgm" src="https://audio.cnzw.us.kg/only_my_railgun.m4a" autoplay loop></audio>
+    <script>
+        document.querySelector("#bgm").play();
+        function bgm_play() {
+            document.querySelector("#bgm").play();
+        }
+        function bgm_pause() {
+            document.querySelector("#bgm").pause();
+        }
+    </script>
 </head>
 
 <body>
@@ -106,37 +130,133 @@
         </style>
     </noscript>
     <!--main-->
-    <div id="main">
-        <audio id="default_bgm" src="https://audio.cnzw.us.kg/only_my_railgun.m4a" controls autoplay loop></audio>
-    </div>
-    <!--footer-->
-    <footer>
-        <hr>
-        <copyright>
-            Copyright&copy;&nbsp;
-            <script>document.write(`${new Date().getFullYear()}&nbsp;`);</script>
-            <a href="https://github.com/CNZWBYWTW/" target="_blank">CNZW.</a>&nbsp;All&nbsp;rights&nbsp;reserved.
-        </copyright>
-        <hr>
+    <main>
+        <!--check-->
+        <script>
+            function __c__() {
+                document.querySelector("#mobile").style = "display: none;";
+                document.querySelector("#desktop").style.removeProperty("display");
+            }
+            function __p__() {
+                document.querySelector("#desktop").style = "display: none;";
+                document.querySelector("#mobile").style.removeProperty("display");
+            }
+        </script>
+        <!--style-->
         <style>
-            footer {
-                color: white;
-                background-color: #00000080;
-                text-align: center;
-            }
-
-            footer copyright {
-                font-size: 20px;
-                font-weight: bold;
-            }
-
-            footer copyright a {
-                color: white;
-                text-decoration: none;
-                font-family: "MC";
+            @font-face {
+                font-family: "C";
+                src: url("/ttf/C.ttf");
             }
         </style>
-    </footer>
+        <!--content-->
+        <div id="desktop">
+            <div class="title">About CNZW</div>
+            <div class="left dm">
+                <ul>
+                    <li>
+                        <a href="#" onclick="ctrl_if('./pages/')">CNZW1</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="ctrl_if('./pages/')">CNZW2</a>
+                    </li>
+                    <li class="list_footer">
+                        <span>
+                            Powered&nbsp;by&nbsp;<cnzw onclick="window.open('https://github.com/CNZWBYWTW/')">CNZW
+                            </cnzw>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="right dm">
+                <iframe class="pages" src="https://example.com/" frameborder="0"></iframe>
+            </div>
+            <script>
+                function ctrl_if(url) {
+                    var dif = document.querySelector("iframe.pages");
+                    dif.src = url;
+                }
+            </script>
+            <style>
+                #desktop {
+                    height: max-content;
+                    width: 90%;
+                    display: block;
+                    margin: auto;
+                    margin-top: 3vh;
+                }
+
+                #desktop>.title {
+                    border: black 3px solid;
+                    text-align: center;
+                    font-size: 30px;
+                    background-color: #00000080;
+                    color: #00ff00;
+                    border-radius: 2em;
+                    margin-bottom: 3vh;
+                    font-family: "C";
+                }
+
+                .dm {
+                    margin-bottom: 5vh;
+                }
+
+                .dm ul {
+                    display: block;
+                    margin-left: -10%;
+                    width: 100%;
+                    height: 100%;
+                    font-family: "C";
+                    font-size: 5vw;
+                    list-style-type: none;
+                }
+
+                .dm ul li a {
+                    color: white;
+                    text-decoration: none;
+                }
+
+                .dm ul li {
+                    margin-bottom: 3vh;
+                }
+
+                .dm.left ul li.list_footer {
+                    font-size: 2.2vw;
+                }
+
+                .dm.left ul li.list_footer cnzw {
+                    font-family: "MC";
+                }
+
+                .dm.left {
+                    float: left;
+                    width: 25%;
+                    height: 100vh;
+                    background-color: #00000080;
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                }
+
+                .dm.right {
+                    float: right;
+                    width: 75%;
+                    height: 100vh;
+                    background-color: #ffffff80;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                }
+
+                #desktop iframe.pages {
+                    width: 100%;
+                    height: 100%;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                }
+            </style>
+        </div>
+        <div id="mobile">
+        </div>
+    </main>
 </body>
 
 </html>
