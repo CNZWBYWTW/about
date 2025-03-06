@@ -131,22 +131,6 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
     </noscript>
     <!--main-->
     <main>
-        <!--check-->
-        <script>
-            function __c__() {
-                document.querySelector("#mobile").style = "display: none;";
-                document.querySelector("#desktop").style.removeProperty("display");
-            }
-            function __p__() {
-                document.querySelector("#desktop").style = "display: none;";
-                document.querySelector("#mobile").style.removeProperty("display");
-            }
-            if (innerWidth / innerHeight < 1.2) {
-                __p__();
-            } else {
-                __c__();
-            }
-        </script>
         <!--style-->
         <style>
             @font-face {
@@ -261,6 +245,24 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
         </div>
         <div id="mobile" style="display: none;">
         </div>
+        <!--check screen-->
+        <script>
+            function __c__() {
+                document.querySelector("#mobile").style = "display: none;";
+                document.querySelector("#desktop").style.removeProperty("display");
+            }
+            function __p__() {
+                document.querySelector("#desktop").style = "display: none;";
+                document.querySelector("#mobile").style.removeProperty("display");
+            }
+            window.onload = function () {
+                if (innerWidth / innerHeight < 1.2) {
+                    __p__();
+                } else {
+                    __c__();
+                }
+            };
+        </script>
     </main>
 </body>
 
