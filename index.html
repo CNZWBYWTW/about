@@ -28,10 +28,23 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
         }
     </style>
     <!--BGM-->
-    <audio id="bgm" src="https://audio.cnzw.us.kg/only_my_railgun.m4a" autoplay loop></audio>
+    <audio id="bgm" autoplay loop></audio>
     <script>
         var bgm = document.querySelector("#bgm");
+
+        var bgm_root_url = `audio.cnzw.us.kg`,
+            bgm_list = {
+                1: "only_my_railgun.m4a",
+                2: "青嵐のあとで.m4a",
+                3: "grow_slowly.m4a",
+                4: "level5_-judgelight-.m4a",
+                5: "nameless_story.m4a"
+            },
+            bgm_url = `//${bgm_root_url}/${bgm_list[getRandomInt(1, Object.keys(bgm_list).length)]}`;
+        bgm.src = bgm_url;
+
         bgm.play();
+
         function bgm_play() {
             bgm.play();
         }
@@ -150,7 +163,7 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
             <div class="left dm">
                 <ul>
                     <li class="bgm_controls_c">
-                        <span>BGM:&nbsp;<a id="bgm_control_button_c_c" href="#"></a></span>
+                        <span>BGM:&nbsp;<a id="bgm_control_button_c" href="#"></a></span>
                         <br>
                         <input id="bgm_progress_c" type="range" min="0" max="10000000000" value="0">
                     </li>
@@ -272,14 +285,14 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
             <script>
                 setInterval(() => {
                     if (bgm.paused) {
-                        if (document.querySelector("#bgm_control_button_c_c").innerText !== "Play") {
-                            document.querySelector("#bgm_control_button_c_c").innerText = "Play";
-                            document.querySelector("#bgm_control_button_c_c").onclick = bgm_play;
+                        if (document.querySelector("#bgm_control_button_c").innerText !== "Play") {
+                            document.querySelector("#bgm_control_button_c").innerText = "Play";
+                            document.querySelector("#bgm_control_button_c").onclick = bgm_play;
                         }
                     } else {
-                        if (document.querySelector("#bgm_control_button_c_c").innerText !== "Pause") {
-                            document.querySelector("#bgm_control_button_c_c").innerText = "Pause";
-                            document.querySelector("#bgm_control_button_c_c").onclick = bgm_pause;
+                        if (document.querySelector("#bgm_control_button_c").innerText !== "Pause") {
+                            document.querySelector("#bgm_control_button_c").innerText = "Pause";
+                            document.querySelector("#bgm_control_button_c").onclick = bgm_pause;
                         }
                     }
                 });
