@@ -28,22 +28,29 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
         }
     </style>
     <!--BGM-->
-    <audio id="bgm" autoplay loop></audio>
+    <audio id="bgm" autoplay></audio>
     <script>
         var bgm = document.querySelector("#bgm");
 
         var bgm_root_url = `audio.cnzw.us.kg`,
             bgm_list = {
                 1: "only_my_railgun.m4a",
-                2: "青嵐のあとで.m4a",
+                2: "level5_-judgelight-.m4a",
                 3: "grow_slowly.m4a",
-                4: "level5_-judgelight-.m4a",
+                4: "青嵐のあとで.m4a",
                 5: "nameless_story.m4a"
             },
             bgm_url = `//${bgm_root_url}/${bgm_list[getRandomInt(1, Object.keys(bgm_list).length)]}`;
         bgm.src = bgm_url;
 
         bgm.play();
+
+        setInterval(() => {
+            if (bgm.paused && bgm.currentTime == bgm.duration) {
+                bgm.src = `//${bgm_root_url}/${bgm_list[getRandomInt(1, Object.keys(bgm_list).length)]}`;
+                bgm.play();
+            }
+        })
 
         function bgm_play() {
             bgm.play();
