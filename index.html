@@ -59,6 +59,10 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
         function bgm_pause() {
             bgm.pause();
         }
+        function change_bgm() {
+            bgm.src = `//${bgm_root_url}/${bgm_list[getRandomInt(1, Object.keys(bgm_list).length)]}`;
+            bgm.play();
+        }
     </script>
 </head>
 
@@ -189,7 +193,8 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
             <div class="left dm">
                 <ul>
                     <li class="bgm_controls_c">
-                        <span>BGM:&nbsp;<a id="bgm_control_button_c" href="#"></a></span>
+                        <span><a id="bgm_change_button_c" href="#" onclick="change_bgm()">BGM</a>:&nbsp;<a
+                                id="bgm_control_button_c" href="#"></a></span>
                         <br>
                         <input id="bgm_progress_c" type="range" min="0" max="10000000000" value="0">
                     </li>
@@ -277,6 +282,10 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
 
                 .bgm_controls_c {
                     font-size: 23px;
+                    color: #00ff00;
+                }
+
+                #bgm_change_button_c {
                     color: #00ff00;
                 }
 
