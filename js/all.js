@@ -6,9 +6,9 @@ function getURL(name) {
 }
 
 /* iframe */
-if (window.self !== window.top && window.location.hostname !== window.top.location.hostname) {
+if (window.self !== window.top) {
     window.top.location = window.location;
-    alert(`CNZW禁止此页面进行iframe嵌套\n\nPowered by CNZW`);
+    alert(`CNZW禁止此页面进行iframe嵌套\nURL: ${window.location.href}\n\nPowered by CNZW`);
 }
 
 /* Convert */
