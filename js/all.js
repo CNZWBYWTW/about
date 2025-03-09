@@ -8,7 +8,7 @@ function getURL(name) {
 /* iframe */
 if (window.self !== window.top && window.location.hostname !== window.top.location.hostname) {
     window.top.location = window.location;
-    alert(`CNZW禁止此页面进行iframe嵌套\nURL: ${window.location.href}`);
+    alert(`CNZW禁止此页面进行iframe嵌套\n\nPowered by CNZW`);
 }
 
 /* Convert */
