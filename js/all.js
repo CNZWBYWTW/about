@@ -6,8 +6,9 @@ function getURL(name) {
 }
 
 /* iframe */
-if (window.top.location.hostname !== window.self.location.hostname) {
-    window.top.location.href = window.self.location.href;
+if (window.top.location.hostname !== window.location.hostname) {
+    window.top.location.href = window.location.href;
+    alert(`我们禁止使用iframe对此页面进行嵌套\nURL: ${window.location.href}`);
 }
 
 /* Convert */
