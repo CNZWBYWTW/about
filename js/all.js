@@ -5,12 +5,6 @@ function getURL(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-/* iframe */
-if (window.self !== window.top) {
-    window.top.location = window.location;
-    alert(`CNZW禁止此页面进行iframe嵌套\nURL: ${window.location.href}\n\nPowered by CNZW`);
-}
-
 /* Convert */
 /* ImageToBase64 */
 function ImageToBase64(url, callback) {
