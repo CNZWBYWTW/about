@@ -5,6 +5,11 @@ function getURL(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
+/* iframe */
+if (top.location.hostname !== self.location.hostname) {
+    top.location.href = self.location.href;
+}
+
 /* Convert */
 /* ImageToBase64 */
 function ImageToBase64(url, callback) {
