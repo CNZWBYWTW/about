@@ -6,8 +6,8 @@ function getURL(name) {
 }
 
 /* iframe */
-if (top.location.hostname !== self.location.hostname) {
-    top.location.href = self.location.href;
+if (window.top.location.hostname !== window.self.location.hostname) {
+    window.top.location.href = window.self.location.href;
 }
 
 /* Convert */
