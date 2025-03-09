@@ -184,10 +184,10 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
                         <input id="bgm_progress_c" type="range" min="0" max="10000000000" value="0">
                     </li>
                     <li>
-                        <a href="#" onclick="ctrl_if('./pages/links.html')">LINKS</a>
+                        <a href="#" onclick="ctrl_if_c('./pages/links.html')">LINKS</a>
                     </li>
                     <li>
-                        <a href="#" onclick="ctrl_if('./pages/contact.html')">CONTACT</a>
+                        <a href="#" onclick="ctrl_if_c('./pages/contact.html')">CONTACT</a>
                     </li>
                     <li class="list_footer_c">
                         <span>
@@ -202,9 +202,9 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
                 <iframe class="pages" src="./pages/links.html" frameborder="0"></iframe>
             </div>
             <script>
-                function ctrl_if(url) {
-                    var dif = document.querySelector("iframe.pages");
-                    dif.src = url;
+                function ctrl_if_c(url) {
+                    var dif_c = document.querySelector(".right iframe.pages");
+                    dif_c.src = url;
                 }
             </script>
             <style>
@@ -328,6 +328,69 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
             </script>
         </div>
         <div id="mobile" style="display: none;">
+            <header>
+                <div class="title">About CNZW</div>
+                <div class="menu_icon_p">
+                    <div id="menu_icon_start_p" class="menu_ctrl_button" onclick="menu_start_p()">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+                            <path stroke="#000" stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </div>
+                    <div id="menu_icon_close_p" class="menu_ctrl_button" onclick="menu_close_p()"
+                        style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%">
+                            <path fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"
+                                d="M6 6 L18 18 M6 18 L18 6" />
+                        </svg>
+                    </div>
+                </div>
+            </header>
+            <div class="main"></div>
+            <style>
+                #mobile header {
+                    display: block;
+                    position: fixed;
+                    width: 100%;
+                    height: 10vh;
+                    background-color: white;
+                    color: black;
+                    text-align: center;
+                    font-size: 5vh;
+                    font-family: "C";
+                    border-bottom: black 3px solid;
+                }
+
+                #mobile header .title {
+                    width: 79%;
+                    height: 100%;
+                    float: left;
+                    text-align: center;
+                    line-height: 10vh;
+                }
+
+                #mobile header .menu_icon_p {
+                    width: 20%;
+                    height: 100%;
+                    border-left: black 1vw solid;
+                    float: right;
+                    cursor: pointer;
+                }
+
+                .menu_ctrl_button {
+                    width: 100%;
+                    height: 100%;
+                }
+            </style>
+            <script>
+                function menu_start_p() {
+                    document.querySelector("#menu_icon_start_p").style = "display: none;";
+                    document.querySelector("#menu_icon_close_p").style.removeProperty("display");
+                }
+                function menu_close_p() {
+                    document.querySelector("#menu_icon_close_p").style = "display: none;";
+                    document.querySelector("#menu_icon_start_p").style.removeProperty("display");
+                }
+            </script>
         </div>
         <!--check screen-->
         <script>
