@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MENU - CNZW</title>
+    <link rel="icon" href="/img/CNZW/favicon.png">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/all.css">
+    <script src="/js/all.js"></script>
+    <script>function __c__() { return 0; } function __p__() { return 0; };</script>
+</head>
+
+<body>
+    <!--noscript-->
+    <noscript class="noscript">
+        <h2 class="noscript">
+            你的浏览器不支持或未启用JavaScript
+            <br>
+            请启用JavaScript后重新加载页面
+            <br>
+            <br>
+            <br>
+            <a id="help-javascript"
+                href="https://support.microsoft.com/zh-cn/office/%E5%90%AF%E7%94%A8-javascript-7bb9ee74-6a9e-4dd1-babf-b0a1bb136361">
+                获取更多帮助
+            </a>
+            <style>
+                #help-javascript {
+                    font-size: 17px;
+                    color: black;
+                    border: 5px solid red;
+                    border-radius: 5px;
+                }
+
+                #help-javascript:hover {
+                    color: rgb(0, 255, 0);
+                }
+            </style>
+            <div class="noscript-link">
+                Powered&nbsp;by
+                <a href="https://github.com/CNZWBYWTW" target="_blank">
+                    <img src="https://avatars.githubusercontent.com/CNZWBYWTW" class="noscript-avatar">
+                    <span class="MC">
+                        CNZWBYWTW
+                    </span>
+                </a>
+            </div>
+            <span class="copyright">
+                <b>
+                    Copyright&copy;&nbsp;by
+                    <a href="https://github.com/CNZWBYWTW" target="_blank" class="MC">
+                        CNZW
+                    </a>
+                    . All Right Reserved
+                </b>
+            </span>
+        </h2>
+        <style>
+            @font-face {
+                font-family: 'MC';
+                src: url('/font/MC.ttf');
+            }
+
+            .noscript {
+                user-select: none;
+                position: fixed;
+                text-align: center;
+                z-index: 114514;
+                background-color: rgb(50, 50, 50);
+                color: white;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+
+            .noscript a {
+                text-decoration: none;
+                color: white;
+            }
+
+            .noscript-link {
+                margin-top: 50px;
+            }
+
+            .noscript-avatar {
+                background-color: black;
+                width: 20px;
+                border-radius: 50%;
+                margin-bottom: -2px;
+
+            }
+
+            .copyright {
+                font-size: 15px;
+            }
+
+            .MC {
+                font-family: 'MC';
+            }
+        </style>
+    </noscript>
+    <!--loading-->
+    <div id="loading">
+        <img class=" loading loading_image" src="/img/CNZW/loading.gif" alt="loading">
+        <style>
+            #loading {
+                position: fixed;
+                z-index: 6969;
+                background-color: #696969;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+        <script>
+            window.onload = function () {
+                document.getElementById("loading").style = "display: none;";
+                document.getElementById("loading").innerHTML = "";
+            }
+        </script>
+    </div>
+    <style>
+        body {
+            width: 100%;
+            margin: 0;
+        }
+    </style>
+    <!--main-->
+    <main>
+        <h1>M&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;N&nbsp;&nbsp;&nbsp;U</h1>
+        <div class="menu">
+            <div class="bgm_controls_p">
+                <span><a id="bgm_change_button_p" href="#" onclick="window.top.change_bgm()">BGM</a>:&nbsp;<a
+                        id="bgm_control_button_p" href="#"></a></span>
+                <input id="bgm_progress_p" type="range" min="0" max="10000000000" value="0" title="BGM PROGRESS">
+            </div>
+            <div class="menu">
+                <a href="#" onclick="window.top.ctrl_if_p('./pages/links.html')">LINKS</a>
+            </div>
+            <div class="menu">
+                <a href="#" onclick="window.top.ctrl_if_p('./pages/contact.html')">CONTACT</a>
+            </div>
+        </div>
+        <style>
+            @font-face {
+                font-family: 'C';
+                src: url("https://cf1.cdn.cnzw.us.kg/font/C.ttf"),
+                    url('/ttf/C.ttf');
+            }
+
+            a {
+                color: black;
+                text-decoration: none;
+            }
+
+            main {
+                text-align: center;
+                font-family: "C";
+            }
+
+            main .menu {
+                margin-bottom: 1vh;
+                font-size: 10vw;
+                display: block;
+                width: max-content;
+                margin: auto;
+            }
+
+            main h1 {
+                text-align: center;
+                font-size: 5em;
+                width: max-content;
+                margin: auto;
+                margin-bottom: 5vh;
+                border-bottom: 10px black solid;
+            }
+
+            .bgm_controls_p {
+                background-color: black;
+                width: 80vw;
+                border-radius: 2em;
+                margin-bottom: 3vh;
+            }
+
+            .bgm_controls_p span {
+                font-size: 5vw;
+            }
+
+            .bgm_controls_p {
+                font-size: 23px;
+                color: #00ff00;
+            }
+
+            #bgm_change_button_p {
+                color: #00ff00;
+            }
+
+            #bgm_control_button_p {
+                color: #00ff00;
+            }
+
+            #bgm_progress_p {
+                line-height: 23px;
+                margin-left: 5vw;
+                width: 40vw;
+                background-color: #00ff00;
+            }
+
+            #bgm_progress_p::-webkit-slider-runnable-track {
+                background-color: #00ff00;
+                border-radius: 2em;
+            }
+        </style>
+        <!--footer-->
+        <footer>
+            <hr>
+            <copyright>
+                Copyright&copy;&nbsp;
+                <script>document.write(`${new Date().getFullYear()}&nbsp;`);</script>
+                <a href="https://github.com/CNZWBYWTW/" target="_blank">CNZW.</a>&nbsp;All&nbsp;rights&nbsp;reserved.
+            </copyright>
+            <hr>
+            <style>
+                footer {
+                    color: white;
+                    background-color: #00000080;
+                    text-align: center;
+                }
+
+                footer copyright {
+                    font-size: 2.5em;
+                    font-weight: bold;
+                }
+
+                footer copyright a {
+                    color: white;
+                    text-decoration: none;
+                    font-family: "MC";
+                }
+            </style>
+        </footer>
+        <!--BGM-->
+        <!--bgm button-->
+        <script>
+            setInterval(() => {
+                if (window.top.bgm.paused) {
+                    if (document.querySelector("#bgm_control_button_p").innerText !== "Play") {
+                        document.querySelector("#bgm_control_button_p").innerText = "Play";
+                        document.querySelector("#bgm_control_button_p").onclick = window.top.bgm_play;
+                    }
+                } else {
+                    if (document.querySelector("#bgm_control_button_p").innerText !== "Pause") {
+                        document.querySelector("#bgm_control_button_p").innerText = "Pause";
+                        document.querySelector("#bgm_control_button_p").onclick = window.top.bgm_pause;
+                    }
+                }
+            });
+        </script>
+        <!--bgm progress-->
+        <script>
+            setInterval(() => {
+                document.querySelector("#bgm_progress_p").value = window.top.bgm.currentTime / window.top.bgm.duration * 10000000000;
+            });
+            document.querySelector("#bgm_progress_p").oninput = function () {
+                window.top.bgm.currentTime = window.top.bgm.duration * this.value / 10000000000;
+            };
+        </script>
+
+    </main>
+</body>
+
+</html>
