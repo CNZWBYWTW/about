@@ -348,7 +348,9 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
             <div id="menu_p" style="display: none;">
                 <iframe class="menu_if_p" src="./menu.html" frameborder="0"></iframe>
             </div>
-            <div class="main"></div>
+            <div class="main">
+                <iframe id="mobile_iframe" class="pages" src="./pages/links.html"></iframe>
+            </div>
             <script>
                 function ctrl_if_p(url) {
                     var dif_c = document.querySelector("#mobile .main iframe.pages");
@@ -366,7 +368,8 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
                     text-align: center;
                     font-size: 5vh;
                     font-family: "C";
-                    border-bottom: black 0.5vh solid;
+                    border-bottom: black 10px solid;
+                    z-index: 9169;
                 }
 
                 #mobile header .title {
@@ -395,13 +398,20 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
                     width: 100%;
                     height: 50vh;
                     background-color: white;
-                    margin-top: 10.5vh;
+                    margin-top: 10vh;
                     position: fixed;
                 }
 
                 .menu_if_p {
                     width: 100%;
                     height: 100%;
+                }
+
+                #mobile .main iframe.pages {
+                    width: 100%;
+                    height: 90vh;
+                    margin-top: 10vh;
+                    background-color: #ffffff80;
                 }
             </style>
             <script>
@@ -414,6 +424,11 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
                     document.querySelector("#menu_icon_close_p").style = "display: none;";
                     document.querySelector("#menu_icon_start_p").style.removeProperty("display");
                     document.querySelector("#menu_p").style = "display: none;";
+                }
+                document.querySelector("#mobile iframe").onload = function () {
+                    setInterval(() => {
+                        document.getElementById('mobile_iframe').contentWindow.document.querySelector('main').style = 'font-size: 3em;';
+                    })
                 }
             </script>
         </div>
