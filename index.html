@@ -345,7 +345,16 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
                     </div>
                 </div>
             </header>
+            <div id="menu_p" style="display: none;">
+                <iframe class="menu_if_p" src="./menu.html" frameborder="0"></iframe>
+            </div>
             <div class="main"></div>
+            <script>
+                function ctrl_if_p(url) {
+                    var dif_c = document.querySelector("#mobile .main iframe.pages");
+                    dif_c.src = url;
+                }
+            </script>
             <style>
                 #mobile header {
                     display: block;
@@ -357,7 +366,7 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
                     text-align: center;
                     font-size: 5vh;
                     font-family: "C";
-                    border-bottom: black 3px solid;
+                    border-bottom: black 0.6vh solid;
                 }
 
                 #mobile header .title {
@@ -381,15 +390,30 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
                     width: 100%;
                     height: 100%;
                 }
+
+                #menu_p {
+                    width: 100%;
+                    height: 50vh;
+                    background-color: white;
+                    margin-top: 10.6vh;
+                    position: fixed;
+                }
+
+                .menu_if_p {
+                    width: 100%;
+                    height: 100%;
+                }
             </style>
             <script>
                 function menu_start_p() {
                     document.querySelector("#menu_icon_start_p").style = "display: none;";
                     document.querySelector("#menu_icon_close_p").style.removeProperty("display");
+                    document.querySelector("#menu_p").style.removeProperty("display");
                 }
                 function menu_close_p() {
                     document.querySelector("#menu_icon_close_p").style = "display: none;";
                     document.querySelector("#menu_icon_start_p").style.removeProperty("display");
+                    document.querySelector("#menu_p").style = "display: none;";
                 }
             </script>
         </div>
