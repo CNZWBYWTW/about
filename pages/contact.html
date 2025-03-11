@@ -165,6 +165,15 @@
             }
         </style>
     </main>
+    <script>
+        setInterval(() => {
+            if (window.top.cp == "p") {
+                document.querySelector("main").style = "font-size: 3em;";
+            } else {
+                document.querySelector("main").style.removeProperty("font-size");
+            }
+        })
+    </script>
 </body>
 
 </html>
